@@ -1,1 +1,57 @@
-
+{
+  "expo": {
+    "name": "SweepGuard",
+    "slug": "sweepguard",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0D1117"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.sweepguard.scanner",
+      "infoPlist": {
+        "NSCameraUsageDescription": "SweepGuard needs camera access to scan for optical lens glint and infrared LED reflections.",
+        "NSBluetoothAlwaysUsageDescription": "SweepGuard uses Bluetooth Low Energy to scan for rogue AirTags, Tiles, and hidden wireless surveillance beacons.",
+        "NSBluetoothPeripheralUsageDescription": "SweepGuard scans peripheral BLE signals to discover nearby tracking tags.",
+        "NSLocalNetworkUsageDescription": "SweepGuard audits your local Wi-Fi network subnet to detect suspicious hardware and network devices."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0D1117"
+      },
+      "package": "com.sweepguard.scanner",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.FLASHLIGHT",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.INTERNET"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "SweepGuard needs camera access to scan for lens glint and infrared reflections."
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "modes": ["central"],
+          "bluetoothAlwaysPermission": "SweepGuard uses BLE to detect unwanted trackers nearby."
+        }
+      ]
+    ]
+  }
+}
