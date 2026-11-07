@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   ActivityIndicator, Alert, Linking, PermissionsAndroid, Platform, SafeAreaView,
-  ScrollView, Share, StatusBar, StyleSheet, Switch, Text, TextInput,
+  ScrollView, Share, StatusBar, StyleSheet, Text, TextInput,
   TouchableOpacity, View
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -71,7 +71,6 @@ export default function App() {
       manager.stopDeviceScan();
       if (scanTimer.current) clearInterval(scanTimer.current);
       if (scanEndTimer.current) clearTimeout(scanEndTimer.current);
-      manager.destroy();
     };
   }, []);
 
@@ -174,7 +173,7 @@ export default function App() {
   };
   const updateRoom = (v: string) => { setRoom(v); AsyncStorage.setItem(KEYS.room, v).catch(() => {}); };
 
-  const Card = ({ children, style }: { children: React.ReactNode; style?: object }) => <View style={[styles.card, style]}>{children}</View>;
+  const Card = ({ children }: { children: React.ReactNode }) => <View style={styles.card}>{children}</View>;
   const Action = ({ label, onPress, secondary = false, disabled = false }: { label: string; onPress: () => void; secondary?: boolean; disabled?: boolean }) =>
     <TouchableOpacity accessibilityRole="button" disabled={disabled} onPress={onPress} style={[styles.action, secondary && styles.secondary, disabled && { opacity: 0.45 }]}><Text style={[styles.actionText, secondary && { color: C.text }]}>{label}</Text></TouchableOpacity>;
   const Header = ({ title, subtitle }: { title: string; subtitle: string }) =>
