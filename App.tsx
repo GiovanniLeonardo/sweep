@@ -237,6 +237,8 @@ export default function App() {
       </Card>;
     })}
     {!devices.length && <Card><Text style={styles.body}>{scanning ? "Listening for nearby Bluetooth advertisements…" : "No Bluetooth signals have been collected in this session."}</Text></Card>}
+    {savedDevices.length > 0 && <Card><Text style={styles.cardTitle}>Marked for your review ({savedDevices.length})</Text>{savedDevices.map(d => <View key={d.id} style={styles.savedDevice}><Text style={styles.deviceName}>{d.name}</Text><Text style={styles.muted}>ID: {shortId(d.id)} · First marked {dateLabel(d.firstSeen)}</Text></View>)}</Card>}
+
     <Card><Text style={styles.note}>Nearby Bluetooth devices are not proof of surveillance. Phones, watches, headphones and smart-home products may appear. Some trackers may not advertise during a short scan. Use your phone's built-in unknown-tracker alerts too.</Text></Card>
   </ScrollView>;
 
@@ -312,7 +314,7 @@ const styles = StyleSheet.create({
   stats: { flexDirection: "row", gap: 9 }, stat: { flex: 1, backgroundColor: C.panel, borderRadius: 14, padding: 14, borderWidth: 1, borderColor: C.line },
   statNumber: { color: C.text, fontSize: 23, fontWeight: "800" }, cameraFrame: { height: 390, backgroundColor: "#05070A", borderRadius: 18, overflow: "hidden", borderWidth: 1, borderColor: C.line },
   cameraTag: { position: "absolute", top: 12, left: 12, backgroundColor: "#0009", padding: 8, borderRadius: 8 }, cameraTagText: { color: C.teal, fontSize: 10, fontWeight: "800", letterSpacing: 1 },
-  row: { flexDirection: "row", gap: 10 }, flex: { flex: 1 }, deviceHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 8 },
+  row: { flexDirection: "row", gap: 10 }, flex: { flex: 1 }, deviceHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 8 }, savedDevice: { paddingVertical: 8, borderBottomWidth: 1, borderBottomColor: C.line },
   deviceName: { color: C.text, fontWeight: "700", fontSize: 15, flex: 1 }, signal: { color: C.teal, fontWeight: "800", fontSize: 12 },
   progress: { height: 6, backgroundColor: C.panel2, borderRadius: 4, overflow: "hidden" }, progressFill: { height: 6, backgroundColor: C.teal },
   checkItem: { borderBottomWidth: 1, borderBottomColor: C.line, paddingVertical: 7 }, checkRow: { flexDirection: "row", alignItems: "center", gap: 12, paddingVertical: 6 },
