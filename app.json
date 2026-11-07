@@ -11,7 +11,8 @@
       "infoPlist": {
         "NSCameraUsageDescription": "Sweep uses the camera to help you inspect a room for visible camera-lens reflections.",
         "NSBluetoothAlwaysUsageDescription": "Sweep scans nearby Bluetooth advertisements for unfamiliar devices."
-      }
+      },
+      "bundleIdentifier": "com.giovannileonardo.sweep"
     },
     "android": {
       "permissions": [
@@ -22,7 +23,9 @@
       ],
       "adaptiveIcon": {
         "backgroundColor": "#10141C"
-      }
+      },
+      "package": "com.giovannileonardo.sweep",
+      "versionCode": 1
     },
     "plugins": [
       [
@@ -35,7 +38,9 @@
         "react-native-ble-plx",
         {
           "isBackgroundEnabled": false,
-          "modes": ["central"],
+          "modes": [
+            "central"
+          ],
           "bluetoothAlwaysPermission": "Allow Sweep to scan for nearby Bluetooth devices."
         }
       ]
