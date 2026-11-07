@@ -246,7 +246,7 @@ export default function App() {
     <Header title="Physical checklist" subtitle="A methodical visual check is one of the most useful steps." />
     <Card>
       <View style={styles.deviceHeader}><Text style={styles.cardTitle}>Inspection progress</Text><Text style={styles.signal}>{checked.length}/{CHECKLIST.length}</Text></View>
-      <View style={styles.progress}><View style={[styles.progressFill, { width: (checked.length / CHECKLIST.length * 100) + "%" }]} /></View>
+      <View style={styles.progress}><View style={[styles.progressFill, { width: ((checked.length / CHECKLIST.length * 100) + "%") as `${number}%` }]} /></View>
       {CHECKLIST.map(item => <View key={item.id} style={styles.checkItem}>
         <TouchableOpacity accessibilityRole="checkbox" accessibilityState={{ checked: checked.includes(item.id) }} style={styles.checkRow} onPress={() => toggleItem(item.id)}>
           <View style={[styles.checkBox, checked.includes(item.id) && styles.checkBoxDone]}><Text style={styles.checkMark}>{checked.includes(item.id) ? "✓" : ""}</Text></View>
