@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Sweep",
+    "slug": "sweep",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "sweep",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Sweep uses the camera to help you inspect a room for visible camera-lens reflections.",
+        "NSBluetoothAlwaysUsageDescription": "Sweep scans nearby Bluetooth advertisements for unfamiliar devices."
+      },
+      "bundleIdentifier": "com.giovannileonardo.sweep"
+    },
+    "android": {
+      "permissions": [
+        "CAMERA",
+        "BLUETOOTH_SCAN",
+        "BLUETOOTH_CONNECT",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#10141C"
+      },
+      "package": "com.giovannileonardo.sweep",
+      "versionCode": 1
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Sweep to use your camera during a room inspection."
+        }
+      ],
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "modes": [
+            "central"
+          ],
+          "bluetoothAlwaysPermission": "Allow Sweep to scan for nearby Bluetooth devices."
+        }
+      ]
+    ]
+  }
+}
