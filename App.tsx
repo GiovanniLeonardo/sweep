@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
   header: { paddingTop: 12, paddingBottom: 8 }, brand: { color: C.text, fontSize: 13, fontWeight: "900", letterSpacing: 3, marginBottom: 22 },
   heading: { color: C.text, fontSize: 29, fontWeight: "800", letterSpacing: -0.7 }, muted: { color: C.muted, fontSize: 13, marginTop: 6, lineHeight: 19 },
   eyebrow: { color: C.teal, fontSize: 10, fontWeight: "800", letterSpacing: 2 }, card: { backgroundColor: C.panel, borderRadius: 18, padding: 17, borderWidth: 1, borderColor: C.line, gap: 11 },
-  cardTitle: { color: C.text, fontSize: 18, fontWeight: "750" }, body: { color: "#D0D8E3", fontSize: 14, lineHeight: 21 }, note: { color: C.amber, fontSize: 12, lineHeight: 18 },
+  cardTitle: { color: C.text, fontSize: 18, fontWeight: "700" }, body: { color: "#D0D8E3", fontSize: 14, lineHeight: 21 }, note: { color: C.amber, fontSize: 12, lineHeight: 18 },
   hint: { color: C.muted, fontSize: 12, lineHeight: 18, marginLeft: 35, marginBottom: 7 }, roomInput: { backgroundColor: C.panel2, borderRadius: 10, borderWidth: 1, borderColor: C.line, paddingHorizontal: 12, paddingVertical: 10, color: C.text, fontSize: 15 },
   action: { backgroundColor: C.teal, borderRadius: 12, paddingVertical: 13, paddingHorizontal: 15, alignItems: "center", justifyContent: "center", minHeight: 44 },
   secondary: { backgroundColor: C.panel2, borderWidth: 1, borderColor: C.line }, actionText: { color: "#09221D", fontWeight: "800", fontSize: 13 },
